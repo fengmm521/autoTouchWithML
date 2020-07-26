@@ -1,0 +1,17 @@
+#!/bin/bash
+export PATH=/usr/local/bin/:/usr/bin:/bin:$PATH
+CUR_PATH=`pwd`
+basepath=$(cd `dirname $0`; pwd)
+echo $CUR_PATH
+echo $basepath
+
+if [[ $3 ]]; then
+    cd $basepath
+    python3 createData.py $1 ../outsource $2 $3
+elif [[ $2 ]]; then
+    cd $basepath
+    python3 createData.py $1 ../outsource $2 xml
+else
+    echo "please input:indir imgfmart labfmart,link:"
+    echo "cdata indir PNG xml"
+fi

@@ -374,27 +374,14 @@ def createData(indir,outdir,imgfmart,labfmart):
     
     return True
 def main(args):
-    indir = None
-    outdir = None
-    imgfmart = '.png'
-    labfmart = '.xml'
-    if len(args) == 2:
-        indir = args[1]
-        outdir = args[1] + os.sep +'out'
-    elif len(args) == 3:
-        indir = args[1]
-        outdir = args[2]
-    elif len(args) == 4:
-        indir = args[1]
-        outdir = args[2]
-        imgfmart = '.' + args[3]
-    elif len(args) == 5:
-        indir = args[1]
-        outdir = args[2]
-        imgfmart = '.' + args[3]
-        labfmart = '.' + args[4]
-    else:
-        print('use pwd dir')
+    if len(args) < 5:
+        print('please input:indir outdir imgfmart labfmart,link:')
+        print('python3 createData.py indir outdir PNG xml')
+        return
+    indir = args[1]
+    outdir = args[2]
+    imgfmart = '.' + args[3]
+    labfmart = '.' + args[4]
     # main(indir,outdir,imgfmart,labfmart)
     isOK = createData(indir,outdir,imgfmart,labfmart)
     print(isOK)
