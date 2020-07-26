@@ -1,0 +1,15 @@
+#!/bin/bash
+export PATH=/usr/local/bin/:/usr/bin:/bin:$PATH
+CUR_PATH=`pwd`
+basepath=$(cd `dirname $0`; pwd)
+echo $CUR_PATH
+echo $basepath
+
+if [[ $2 ]]; then
+    cd $basepath
+    echo "darknet path:"${1}
+    echo "darknet convfile:"${2}
+    $1 detector train cfg/my.data cfg/yolov3.cfg $2  2>&1 | tee log/train_yolov3.log
+else
+    echo "dktrain darknetexePath darknetConvFilePath"
+fi
