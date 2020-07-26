@@ -73,7 +73,7 @@ def createTest():
 def getClasses():
     classespth = GetParentPath(os.getcwd()) + os.sep + 'outsource' + os.sep + 'classes.txt'
     f = open(classespth,'r')
-    lines = f.readlines(classespth)
+    lines = f.readlines()
     f.close()
     ts = []
     for i,v in enumerate(lines):
@@ -126,7 +126,7 @@ def backTrainData():
 
 def createData():
     dpth = os.getcwd() + os.sep + 'data'
-    if os.path.exists(dpth)
+    if os.path.exists(dpth):
         shutil.rmtree(dpth)
     os.mkdir(dpth)
     createTrain()
@@ -144,7 +144,7 @@ def createCfgYOLOv3(cnum):
 
 def createCFGFile():
     cfgdir = os.getcwd() + os.sep + 'cfg'
-    if os.path.exists(cfgdir)
+    if os.path.exists(cfgdir):
         shutil.rmtree(cfgdir)
     os.mkdir(cfgdir)
     cnum = len(getClasses())

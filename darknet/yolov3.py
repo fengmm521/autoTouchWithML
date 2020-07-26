@@ -797,5 +797,5 @@ jitter=.3
 ignore_thresh = .7
 truth_thresh = 1
 random=1
-'''(fnum,cnum,fnum,cnum,fnum,cnum)
+'''%(fnum,cnum,fnum,cnum,fnum,cnum)
     return yolov3

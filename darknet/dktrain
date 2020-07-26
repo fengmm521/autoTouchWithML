@@ -10,6 +10,10 @@ if [[ $2 ]]; then
     echo "darknet path:"${1}
     echo "darknet convfile:"${2}
     $1 detector train cfg/my.data cfg/yolov3.cfg $2  2>&1 | tee log/train_yolov3.log
+elif [[ $1 = cdata ]]; then
+    #statements
+    cd $basepath
+    python3 createTrainAndTest.py
 else
     echo "dktrain darknetexePath darknetConvFilePath"
 fi
