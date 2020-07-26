@@ -1,0 +1,21 @@
+#!/bin/bash
+export PATH=/usr/local/bin/:/usr/bin:/bin:$PATH
+CUR_PATH=`pwd`
+basepath=$(cd `dirname $0`; pwd)
+echo $CUR_PATH
+echo $basepath
+
+if [[ $1 = cdata ]]; then
+    cd $basepath/conventWithXmlAndTxt
+    ./cdata ../datalablImg PNG
+    cd $basepath/darknet
+    ./dktrain cdata
+    
+elif [[ $1 = train ]]; then
+    #statements
+    cd $basepath/darknet
+    echo "start training with datalablImg data"
+    ./dktrain $2 $3
+else
+    echo "dktrain darknetexePath darknetConvFilePath"
+fi
