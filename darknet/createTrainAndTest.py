@@ -132,6 +132,8 @@ def createData():
     createTrain()
     createTest()
     createNames()
+    copyImgAndLabel()
+
 
 from yolov3 import getYOLOV3CFG
 
