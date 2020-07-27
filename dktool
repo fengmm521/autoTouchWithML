@@ -16,6 +16,16 @@ elif [[ $1 = train ]]; then
     cd $basepath/darknet
     echo "start training with datalablImg data"
     ./dktrain $2 $3
+if [[ $1 = test ]]; then
+	#statements
+	cd $basepath 
+	$2 detector test $basepath/darknet/cfg/my.data  $basepath/darknet/cfg/yolov3_test.cfg $3 $4
+fi
 else
-    echo "dktrain darknetexePath darknetConvFilePath"
+	echo "create data with cmd:"
+	echo "dktool cdata"
+	echo "start train with cmd:"
+    echo "dktool train darknetexePath darknetConvFilePath"
+    echo "test traindata with cmd:"
+    echo "dktool test  darknetexePath darketTrainWeightsPath imagePath"
 fi

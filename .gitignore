@@ -3,3 +3,5 @@
 outsource/*
 darknet/data/*
 darknet/cfg/*
+darknet/log/*
+darknet/backup/*
