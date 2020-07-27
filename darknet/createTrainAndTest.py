@@ -99,7 +99,7 @@ def copyImgAndLabel():
         tpth = os.getcwd() + os.sep + 'data' + os.sep + 'images'
         cmd = '/bin/ln -s %s %s'%(spth,tpth)
         os.system(cmd)
-        stph = GetParentPath(os.getcwd()) + os.sep + 'outsource' + os.sep + 'txt'
+        spth = GetParentPath(os.getcwd()) + os.sep + 'outsource' + os.sep + 'txt'
         tpth = os.getcwd() + os.sep + 'data' + os.sep + 'labels'
         cmd = '/bin/ln -s %s %s'%(spth,tpth)
         os.system(cmd)
