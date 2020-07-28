@@ -1,7 +1,7 @@
-<annotation>
-	<folder>Archive</folder>
+<annotation verified="yes">
+	<folder>img</folder>
 	<filename>IMG_1673.PNG</filename>
-	<path>D:\BaiduNetdiskDownload\Archive\IMG_1673.PNG</path>
+	<path>/Users/mage/Downloads/img/IMG_1673.PNG</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -29,10 +29,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>946</xmin>
-			<ymin>899</ymin>
-			<xmax>1083</xmax>
-			<ymax>1226</ymax>
+			<xmin>956</xmin>
+			<ymin>905</ymin>
+			<xmax>1077</xmax>
+			<ymax>1214</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -41,10 +41,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>706</xmin>
-			<ymin>991</ymin>
-			<xmax>1346</xmax>
-			<ymax>1557</ymax>
+			<xmin>724</xmin>
+			<ymin>1005</ymin>
+			<xmax>1312</xmax>
+			<ymax>1552</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -53,10 +53,22 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>173</xmin>
-			<ymin>1314</ymin>
-			<xmax>800</xmax>
-			<ymax>1855</ymax>
+			<xmin>195</xmin>
+			<ymin>1326</ymin>
+			<xmax>765</xmax>
+			<ymax>1862</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>f</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2</xmin>
+			<ymin>1566</ymin>
+			<xmax>347</xmax>
+			<ymax>2048</ymax>
 		</bndbox>
 	</object>
 </annotation>
