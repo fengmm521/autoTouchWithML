@@ -58,7 +58,7 @@ def convert_annotation(in_file,out_file,classes,isHeaveClas):
             xmlbox = obj.find('bndbox')
             b = (float(xmlbox.find('xmin').text), float(xmlbox.find('xmax').text), float(xmlbox.find('ymin').text), float(xmlbox.find('ymax').text))
             bb = convert((w,h), b)
-            f = open(out_file,'w')
+            f = open(out_file,'a')
             f.write(str(cls_id) + " " + " ".join([str(a) for a in bb]) + '\n')
             f.close()
             ocls.append(cls)
