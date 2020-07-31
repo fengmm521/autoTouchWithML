@@ -135,11 +135,18 @@ def createData():
     copyImgAndLabel()
 
 
-from yolov3 import getYOLOV3CFG
+from yolov3 import *
 
 def createCfgYOLOv3(cnum):
     yolov3cfg = getYOLOV3CFG(cnum)
     yocfgpth = os.getcwd() + os.sep + 'cfg' + os.sep + 'yolov3.cfg'
+    f = open(yocfgpth,'w')
+    f.write(yolov3cfg)
+    f.close()
+
+def createCfgYOLOv3_test(cnum):
+    yolov3cfg = getYOLOV3CFG_test(cnum)
+    yocfgpth = os.getcwd() + os.sep + 'cfg' + os.sep + 'yolov3_test.cfg'
     f = open(yocfgpth,'w')
     f.write(yolov3cfg)
     f.close()
@@ -166,6 +173,7 @@ backup = %s
     f.write(mydatastr)
     f.close()
     createCfgYOLOv3(cnum)
+    createCfgYOLOv3_test(cnum)
 
 
 def main():

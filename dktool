@@ -18,7 +18,11 @@ elif [[ $1 = train ]]; then
     ./dktrain $2 $3
 elif [[ $1 = test ]]; then
     #statements
+    echo "run test"
     cd $basepath 
+    echo "2:"$2
+    echo "3:"$3
+    echo "4:"$4
     $2 detector test $basepath/darknet/cfg/my.data  $basepath/darknet/cfg/yolov3_test.cfg $3 $4
 elif [[ $1 = retrain ]]; then
     echo "continue training with datalablImg data"
