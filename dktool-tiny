@@ -15,16 +15,16 @@ elif [[ $1 = train ]]; then
     #statements
     echo "training with datalablImg data"
     cd $basepath/darknet
-    ./dktrain train $2 $3
+    ./dktrain-tiny train $2 $3
 elif [[ $1 = test ]]; then
     #statements
     echo "run test"
     cd $2
-    $2/darknet detector test $basepath/darknet/cfg/my.data  $basepath/darknet/cfg/yolov3_test.cfg $3 $4
+    $2/darknet detector test $basepath/darknet/cfg/my.data  $basepath/darknet/cfg/yolov3-tiny_test.cfg $3 $4
 elif [[ $1 = retrain ]]; then
     echo "continue training with datalablImg data"
     cd $basepath/darknet
-    ./dktrain retrain $2 $3
+    ./dktrain-tiny retrain $2 $3
     
 else
     echo "create data with cmd:"

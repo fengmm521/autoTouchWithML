@@ -136,6 +136,7 @@ def createData():
 
 
 from yolov3 import *
+from yolov3-tiny import *
 
 def createCfgYOLOv3(cnum):
     yolov3cfg = getYOLOV3CFG(cnum)
@@ -147,6 +148,21 @@ def createCfgYOLOv3(cnum):
 def createCfgYOLOv3_test(cnum):
     yolov3cfg = getYOLOV3CFG_test(cnum)
     yocfgpth = os.getcwd() + os.sep + 'cfg' + os.sep + 'yolov3_test.cfg'
+    f = open(yocfgpth,'w')
+    f.write(yolov3cfg)
+    f.close()
+
+#tinyv3
+def createCfgYOLOv3_tiny(cnum):
+    yolov3cfg = getYOLOV3CFG_tiny(cnum)
+    yocfgpth = os.getcwd() + os.sep + 'cfg' + os.sep + 'yolov3-tiny.cfg'
+    f = open(yocfgpth,'w')
+    f.write(yolov3cfg)
+    f.close()
+
+def createCfgYOLOv3_tiny_test(cnum):
+    yolov3cfg = getYOLOV3CFG_tiny_test(cnum)
+    yocfgpth = os.getcwd() + os.sep + 'cfg' + os.sep + 'yolov3-tiny_test.cfg'
     f = open(yocfgpth,'w')
     f.write(yolov3cfg)
     f.close()
@@ -174,6 +190,9 @@ backup = %s
     f.close()
     createCfgYOLOv3(cnum)
     createCfgYOLOv3_test(cnum)
+    #create tinyv3
+    createCfgYOLOv3_tiny(cnum)
+    createCfgYOLOv3_tiny_test(cnum)
 
 
 def main():

@@ -15,7 +15,7 @@ elif [[ $1 = retrain ]]; then
 	echo "darknet path:"${2}
     echo "darknet trainxxx_weights_file:"${3}
     echo "continue train..."
-    $2 detector train $basepath/cfg/my.data $basepath/cfg/yolov3.cfg $3  2>&1 | tee log/train_yolov3.log
+    $2 detector train $basepath/cfg/my.data $basepath/cfg/yolov3-tiny.cfg $3  2>&1 | tee log/train_yolov3.log
 
 elif [[ $1 = train ]]; then
     #statements
@@ -23,7 +23,7 @@ elif [[ $1 = train ]]; then
     echo "darknet path:"${2}
     echo "darknet trainxxx_weights_file:"${3}
     echo "continue train..."
-    $2 detector train $basepath/cfg/my.data $basepath/cfg/yolov3.cfg $3  2>&1 | tee log/train_yolov3.log
+    $2 detector train $basepath/cfg/my.data $basepath/cfg/yolov3-tiny.cfg $3  2>&1 | tee log/train_yolov3.log
 
 else
     echo "dktrain darknetexePath darknetConvFilePath"
