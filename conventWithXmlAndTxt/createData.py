@@ -307,6 +307,21 @@ def saveClassesToFile(fpth,plist):
     f.write(outstr)
     f.close()
 
+def delNotHeaveXmlIMG(imgs,xmls):
+    tmpimgs = []
+    tmpxmls = []
+    names = []
+    for i,v in enumerate(xmls):
+        tmpname = v.split('.')[0]
+        names.append(tmpname)
+        tmpxmls.append(v)
+    for i,v in enumerate(imgs):
+        tmpimgname = v.split('.')[0]
+        if tmpimgname in tmpxmls:
+            tmpimgs.append(v)
+    return tmpimgs,tmpxmls
+
+
 def createData(indir,outdir,imgfmart,labfmart):
     classes = []
     idir = indir
@@ -334,6 +349,7 @@ def createData(indir,outdir,imgfmart,labfmart):
     else:
         print('the classes is empty,and will create it to outdir:\n%s'%(oclspth))
     imgs,xmls=createDataFile(indir,imgfmart,labfmart)
+    imgs,xmls = delNotHeaveXmlIMG(imgs,xmls)
     for i,v in enumerate(imgs):
         print(v)
         spth = indir + v
