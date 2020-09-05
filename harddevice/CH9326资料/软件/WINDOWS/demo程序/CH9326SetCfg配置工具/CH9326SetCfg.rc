@@ -1,0 +1,355 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\CH9326SetCfg.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\CH9326SetCfg.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 CH9326SetCfg"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "CH9326SetCfg 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2014",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_CH9326SETCFG_DIALOG DIALOGEX 0, 0, 472, 419
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "CH9326SetCfg"
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "选择设备",IDC_STATIC,23,28,33,8
+    LTEXT           "设备信息",IDC_STATIC,23,47,33,8
+    LTEXT           "设备插拔",IDC_STATIC,23,66,33,8
+    LTEXT           "波特率",IDC_STATIC,25,91,33,8
+    LTEXT           "停止位",IDC_STATIC,25,113,33,8
+    LTEXT           "校验模式",IDC_STATIC,168,91,33,8
+    LTEXT           "数据位",IDC_STATIC,169,113,33,8
+    COMBOBOX        IDC_COMBO_SELECT_DEV,83,28,224,72,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_STATUS,83,47,224,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_CHABA,83,66,224,12,ES_AUTOHSCROLL | ES_READONLY
+    COMBOBOX        IDC_COMBO_RATE,83,91,48,76,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO_STOP,83,113,48,81,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO_CHECK,259,91,48,88,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO_DATA,259,113,48,86,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    GROUPBOX        "设备信息",IDC_STATIC,13,13,441,120
+    CONTROL         "VID:",IDC_CHECK_VID,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,25,150,40,10
+    EDITTEXT        IDC_EDIT_VID,77,150,40,14,ES_AUTOHSCROLL
+    CONTROL         "PID:",IDC_CHECK_PID,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,129,150,40,10
+    EDITTEXT        IDC_EDIT_PID,185,150,40,14,ES_AUTOHSCROLL
+    GROUPBOX        "DeviceConfig",IDC_STATIC,13,137,441,96
+    CONTROL         "Manufacturer",IDC_CHECK_MS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,25,173,64,10
+    EDITTEXT        IDC_EDIT_MSTRING,99,173,223,12,ES_AUTOHSCROLL
+    CONTROL         "Product",IDC_CHECK_PS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,25,193,64,10
+    EDITTEXT        IDC_EDIT_PSTRING,99,193,223,12,ES_AUTOHSCROLL
+    CONTROL         "Serial",IDC_CHECK_SS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,25,213,64,10
+    EDITTEXT        IDC_EDIT_SSTRING,99,213,223,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "打开设备",IDC_BUTTON_OPEN,355,29,61,14
+    PUSHBUTTON      "设置默认波特率",IDC_BUTTON_SETREPORT,355,91,61,14
+    PUSHBUTTON      "设置配置",IDC_BUTTON_SET_CFG,361,171,50,14
+    PUSHBUTTON      "获取配置",IDC_BUTTON_GET_CFG,361,200,50,14
+    GROUPBOX        "IO5",IDC_STATIC,14,239,105,42
+    CONTROL         "IO5输入",IDC_RADIO_IO5_INPUT,"Button",
+                    BS_AUTORADIOBUTTON,21,252,44,10
+    CONTROL         "IO5输出",IDC_RADIO_IO5_OUTPUT,"Button",
+                    BS_AUTORADIOBUTTON,21,265,44,10
+    CONTROL         "IO5拉高",IDC_RADIO_IO5_HIGH,"Button",BS_AUTORADIOBUTTON,
+                    70,252,44,10
+    CONTROL         "IO5拉低",IDC_RADIO_IO5_LOW,"Button",BS_AUTORADIOBUTTON,
+                    70,265,44,10
+    GROUPBOX        "IO6",IDC_STATIC,125,239,105,42
+    CONTROL         "IO6输入",IDC_RADIO_IO6_INPUT,"Button",
+                    BS_AUTORADIOBUTTON,133,252,44,10
+    CONTROL         "IO6输出",IDC_RADIO_IO6_OUTPUT,"Button",
+                    BS_AUTORADIOBUTTON,133,265,44,10
+    CONTROL         "IO6拉高",IDC_RADIO_IO6_HIGH,"Button",BS_AUTORADIOBUTTON,
+                    181,252,44,10
+    CONTROL         "IO6拉低",IDC_RADIO_IO6_LOW,"Button",BS_AUTORADIOBUTTON,
+                    181,265,44,10
+    GROUPBOX        "IO7",IDC_STATIC,237,239,105,42
+    CONTROL         "IO7输入",IDC_RADIO_IO7_INPUT,"Button",
+                    BS_AUTORADIOBUTTON,245,252,44,10
+    CONTROL         "IO7输出",IDC_RADIO_IO7_OUTPUT,"Button",
+                    BS_AUTORADIOBUTTON,245,265,44,10
+    CONTROL         "IO7拉高",IDC_RADIO_IO7_HIGH,"Button",BS_AUTORADIOBUTTON,
+                    293,252,44,10
+    CONTROL         "IO7拉低",IDC_RADIO_IO7_LOW,"Button",BS_AUTORADIOBUTTON,
+                    293,265,44,10
+    GROUPBOX        "IO8",IDC_STATIC,347,239,105,42
+    CONTROL         "IO8输入",IDC_RADIO_IO8_INPUT,"Button",
+                    BS_AUTORADIOBUTTON,355,252,44,10
+    CONTROL         "IO8输出",IDC_RADIO_IO8_OUTPUT,"Button",
+                    BS_AUTORADIOBUTTON,355,265,44,10
+    CONTROL         "IO8拉高",IDC_RADIO_IO8_HIGH,"Button",BS_AUTORADIOBUTTON,
+                    403,252,44,10
+    CONTROL         "IO8拉低",IDC_RADIO_IO8_LOW,"Button",BS_AUTORADIOBUTTON,
+                    403,265,44,10
+    GROUPBOX        "IO9",IDC_STATIC,14,287,105,42
+    CONTROL         "IO9输入",IDC_RADIO_IO9_INPUT,"Button",
+                    BS_AUTORADIOBUTTON,22,301,44,10
+    CONTROL         "IO9输出",IDC_RADIO_IO9_OUTPUT,"Button",
+                    BS_AUTORADIOBUTTON,22,313,44,10
+    CONTROL         "IO9拉高",IDC_RADIO_IO9_HIGH,"Button",BS_AUTORADIOBUTTON,
+                    70,301,44,10
+    CONTROL         "IO9拉低",IDC_RADIO_IO9_LOW,"Button",BS_AUTORADIOBUTTON,
+                    70,313,44,10
+    GROUPBOX        "IO10",IDC_STATIC,126,287,105,42
+    CONTROL         "IO10输入",IDC_RADIO_IO10_INPUT,"Button",
+                    BS_AUTORADIOBUTTON,134,301,48,10
+    CONTROL         "IO10输出",IDC_RADIO_IO10_OUTPUT,"Button",
+                    BS_AUTORADIOBUTTON,134,313,48,10
+    CONTROL         "IO10拉高",IDC_RADIO_IO10_HIGH,"Button",
+                    BS_AUTORADIOBUTTON,182,301,48,10
+    CONTROL         "IO10拉低",IDC_RADIO_IO10_LOW,"Button",
+                    BS_AUTORADIOBUTTON,182,313,48,10
+    GROUPBOX        "IO11",IDC_STATIC,237,287,105,42
+    CONTROL         "IO11输入",IDC_RADIO_IO11_INPUT,"Button",
+                    BS_AUTORADIOBUTTON,245,301,48,10
+    CONTROL         "IO11输出",IDC_RADIO_IO11_OUTPUT,"Button",
+                    BS_AUTORADIOBUTTON,245,313,48,10
+    CONTROL         "IO11拉高",IDC_RADIO_IO11_HIGH,"Button",
+                    BS_AUTORADIOBUTTON,293,301,48,10
+    CONTROL         "IO11拉低",IDC_RADIO_IO11_LOW,"Button",
+                    BS_AUTORADIOBUTTON,293,313,48,10
+    GROUPBOX        "IO12",IDC_STATIC,347,287,105,42
+    CONTROL         "IO12输入",IDC_RADIO_IO12_INPUT,"Button",
+                    BS_AUTORADIOBUTTON,355,301,48,10
+    CONTROL         "IO12输出",IDC_RADIO_IO12_OUTPUT,"Button",
+                    BS_AUTORADIOBUTTON,355,313,48,10
+    CONTROL         "IO12拉高",IDC_RADIO_IO12_HIGH,"Button",
+                    BS_AUTORADIOBUTTON,403,301,48,10
+    CONTROL         "IO12拉低",IDC_RADIO_IO12_LOW,"Button",
+                    BS_AUTORADIOBUTTON,403,313,48,10
+    GROUPBOX        "IO13",IDC_STATIC,13,337,105,42
+    CONTROL         "IO13输入",IDC_RADIO_IO13_INPUT,"Button",
+                    BS_AUTORADIOBUTTON,21,351,48,10
+    CONTROL         "IO13输出",IDC_RADIO_IO13_OUTPUT,"Button",
+                    BS_AUTORADIOBUTTON,21,363,48,10
+    CONTROL         "IO13拉高",IDC_RADIO_IO13_HIGH,"Button",
+                    BS_AUTORADIOBUTTON,69,351,48,10
+    CONTROL         "IO13拉低",IDC_RADIO_IO13_LOW,"Button",
+                    BS_AUTORADIOBUTTON,69,363,48,10
+    GROUPBOX        "IO14",IDC_STATIC,125,337,105,42
+    CONTROL         "IO14输入",IDC_RADIO_IO14_INPUT,"Button",
+                    BS_AUTORADIOBUTTON,133,351,48,10
+    CONTROL         "IO14输出",IDC_RADIO_IO14_OUTPUT,"Button",
+                    BS_AUTORADIOBUTTON,133,363,48,10
+    CONTROL         "IO14拉高",IDC_RADIO_IO14_HIGH,"Button",
+                    BS_AUTORADIOBUTTON,181,351,48,10
+    CONTROL         "IO14拉低",IDC_RADIO_IO14_LOW,"Button",
+                    BS_AUTORADIOBUTTON,181,363,48,10
+    GROUPBOX        "IO15",IDC_STATIC,237,337,105,42
+    CONTROL         "IO15输入",IDC_RADIO_IO15_INPUT,"Button",
+                    BS_AUTORADIOBUTTON,245,351,48,10
+    CONTROL         "IO15输出",IDC_RADIO_IO15_OUTPUT,"Button",
+                    BS_AUTORADIOBUTTON,245,363,48,10
+    CONTROL         "IO15拉高",IDC_RADIO_IO15_HIGH,"Button",
+                    BS_AUTORADIOBUTTON,293,351,48,10
+    CONTROL         "IO15拉低",IDC_RADIO_IO15_LOW,"Button",
+                    BS_AUTORADIOBUTTON,293,363,48,10
+    GROUPBOX        "IO16",IDC_STATIC,347,337,105,42
+    CONTROL         "IO16输入",IDC_RADIO_IO16_INPUT,"Button",
+                    BS_AUTORADIOBUTTON,355,351,48,10
+    CONTROL         "IO16输出",IDC_RADIO_IO16_OUTPUT,"Button",
+                    BS_AUTORADIOBUTTON,355,363,48,10
+    CONTROL         "IO16拉高",IDC_RADIO_IO16_HIGH,"Button",
+                    BS_AUTORADIOBUTTON,403,351,48,10
+    CONTROL         "IO16拉低",IDC_RADIO_IO16_LOW,"Button",
+                    BS_AUTORADIOBUTTON,403,363,48,10
+    PUSHBUTTON      "设置IO方向",IDC_BUTTON_SETIO,62,391,50,14
+    PUSHBUTTON      "输出IO",IDC_BUTTON_SET_OUTPUT,210,391,50,14
+    PUSHBUTTON      "获取IO",IDC_BUTTON_GETIO,358,391,50,14
+    PUSHBUTTON      "恢复出厂设置",IDC_BUTTON_SET_DEFUALT,355,60,61,14
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "CH9326SetCfg Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "CH9326SetCfg\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2014\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "CH9326SetCfg.EXE\0"
+            VALUE "ProductName", "CH9326SetCfg 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_CH9326SETCFG_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 465
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 412
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 CH9326SetCfg(&A)..."
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\CH9326SetCfg.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

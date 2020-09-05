@@ -1,0 +1,2 @@
+1、CH9326DEG为CH9326提供可视化界面操作Demo，可参考此Demo开发产品软件；
+2、lib目录下包含ch9326dll与libusb-1.0，参考lib中的ReadME操作。

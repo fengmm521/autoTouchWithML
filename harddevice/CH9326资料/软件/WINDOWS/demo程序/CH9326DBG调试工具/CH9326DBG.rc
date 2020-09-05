@@ -1,0 +1,277 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\CH9326DBG.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\CH9326DBG.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 CH9326DBG"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "CH9326DBG 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2014",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_CH9326DBG_DIALOG DIALOGEX 0, 0, 406, 415
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "CH9326DBG"
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "选择设备",IDC_STATIC,23,23,33,8
+    LTEXT           "设备信息",IDC_STATIC,23,42,33,8
+    LTEXT           "设备插拔",IDC_STATIC,23,61,33,8
+    LTEXT           "波特率",IDC_STATIC,23,84,33,8
+    LTEXT           "校验模式",IDC_STATIC,160,84,33,8
+    LTEXT           "停止位",IDC_STATIC,23,104,33,8
+    LTEXT           "数据位",IDC_STATIC,160,104,33,8
+    GROUPBOX        "设备通讯",IDC_STATIC,13,7,368,278
+    COMBOBOX        IDC_COMBO_SELECT_DEV,75,23,217,63,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_STATUS,75,42,196,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_CHABA,75,61,196,13,ES_AUTOHSCROLL | ES_READONLY
+    COMBOBOX        IDC_COMBO_RATE,84,84,48,68,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO_CHECK,221,84,48,71,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO_STOP,84,104,48,60,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO_DATA,221,104,48,50,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "发送数据(输入的数据是16进制,中间没空格,个数少于32个)",
+                    IDC_STATIC,23,124,209,8
+    EDITTEXT        IDC_EDIT_SEND,23,137,245,39,ES_MULTILINE | 
+                    ES_AUTOHSCROLL
+    LTEXT           "接受数据",IDC_STATIC,23,183,33,8
+    EDITTEXT        IDC_EDIT_RECVED,180,183,89,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_RECV,22,203,248,75,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | WS_VSCROLL
+    PUSHBUTTON      "打开设备",IDC_BUTTON_OPEN,303,23,50,14
+    PUSHBUTTON      "设置",IDC_BUTTON_SETREPORT,303,84,50,14
+    PUSHBUTTON      "开始发送",IDC_BUTTON_SEND,303,137,50,14
+    PUSHBUTTON      "开始接受",IDC_BUTTON_RECV,303,203,50,14
+    PUSHBUTTON      "停止接受",IDC_BUTTON_STOP,303,233,50,14
+    PUSHBUTTON      "清空数据",IDC_BUTTON_CLEAR,303,263,50,14
+    GROUPBOX        "IO1",IDC_STATIC,13,291,162,43
+    GROUPBOX        "IO2",IDC_STATIC,219,291,162,43
+    CONTROL         "IO1输入",IDC_RADIO_IO1_INPUT,"Button",
+                    BS_AUTORADIOBUTTON,21,303,44,10
+    CONTROL         "IO1输出",IDC_RADIO_IO1_OUTPUT,"Button",
+                    BS_AUTORADIOBUTTON,21,317,44,10
+    CONTROL         "IO1拉高",IDC_RADIO_IO1_HIGH,"Button",BS_AUTORADIOBUTTON,
+                    99,303,44,10
+    CONTROL         "IO1拉低",IDC_RADIO_IO1_LOW,"Button",BS_AUTORADIOBUTTON,
+                    99,317,44,10
+    CONTROL         "IO2输入",IDC_RADIO_IO2_INPUT,"Button",
+                    BS_AUTORADIOBUTTON,237,303,44,10
+    CONTROL         "IO2输出",IDC_RADIO_IO2_OUTPUT,"Button",
+                    BS_AUTORADIOBUTTON,237,317,44,10
+    CONTROL         "IO2拉高",IDC_RADIO_IO2_HIGH,"Button",BS_AUTORADIOBUTTON,
+                    315,303,44,10
+    CONTROL         "IO2拉低",IDC_RADIO_IO2_LOW,"Button",BS_AUTORADIOBUTTON,
+                    315,317,44,10
+    PUSHBUTTON      "设置IO方向",IDC_BUTTON_SETIO,60,387,50,14
+    PUSHBUTTON      "获取IO",IDC_BUTTON_GETIO,287,388,50,14
+    GROUPBOX        "IO3",IDC_STATIC,14,339,162,43
+    GROUPBOX        "IO4",IDC_STATIC,218,339,162,43
+    CONTROL         "IO3输入",IDC_RADIO_IO3_INPUT,"Button",
+                    BS_AUTORADIOBUTTON,21,352,44,10
+    CONTROL         "IO3输出",IDC_RADIO_IO3_OUTPUT,"Button",
+                    BS_AUTORADIOBUTTON,21,366,44,10
+    CONTROL         "IO3拉高",IDC_RADIO_IO3_HIGH,"Button",BS_AUTORADIOBUTTON,
+                    99,352,44,10
+    CONTROL         "IO3拉低",IDC_RADIO_IO3_LOW,"Button",BS_AUTORADIOBUTTON,
+                    99,366,44,10
+    CONTROL         "IO4输入",IDC_RADIO_IO4_INPUT,"Button",
+                    BS_AUTORADIOBUTTON,237,351,44,10
+    CONTROL         "IO4输出",IDC_RADIO_IO4_OUTPUT,"Button",
+                    BS_AUTORADIOBUTTON,237,365,44,10
+    CONTROL         "IO4拉高",IDC_RADIO_IO4_HIGH,"Button",BS_AUTORADIOBUTTON,
+                    315,351,44,10
+    CONTROL         "IO4拉低",IDC_RADIO_IO4_LOW,"Button",BS_AUTORADIOBUTTON,
+                    315,365,44,10
+    PUSHBUTTON      "输出IO",IDC_BUTTON_SET_OUTPUT,177,387,50,14
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "CH9326DBG Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "CH9326DBG\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2014\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "CH9326DBG.EXE\0"
+            VALUE "ProductName", "CH9326DBG 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_CH9326DBG_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 399
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 408
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 CH9326DBG(&A)..."
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\CH9326DBG.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
