@@ -215,6 +215,7 @@ valpth = 'val.txt'
 def createDataFile(indir,imgfmart = '.png',typefmart = '.xml'):
     imgstmp = getAllFiles(indir,imgfmart)
     xmlstmp = getAllFiles(indir,typefmart)
+    print(indir)
     return imgstmp,xmlstmp
 
 def copyfile(spth,tpth):
@@ -277,6 +278,7 @@ def createTrainAndValFile(odir,names):
     f.close()
 
 def conventPNG2JPEG(spth,tpth):
+    print(spth)
     im = Image.open(spth)
     rgb_im=im.convert('RGB')
     rgb_im.save(tpth)
@@ -315,9 +317,11 @@ def delNotHeaveXmlIMG(imgs,xmls):
         tmpname = v.split('.')[0]
         names.append(tmpname)
         tmpxmls.append(v)
+        # print(v)
     for i,v in enumerate(imgs):
+        # print(v)
         tmpimgname = v.split('.')[0]
-        if tmpimgname in tmpxmls:
+        if tmpimgname in names:
             tmpimgs.append(v)
     return tmpimgs,tmpxmls
 
@@ -349,7 +353,9 @@ def createData(indir,outdir,imgfmart,labfmart):
     else:
         print('the classes is empty,and will create it to outdir:\n%s'%(oclspth))
     imgs,xmls=createDataFile(indir,imgfmart,labfmart)
+    print(len(imgs),len(xmls))
     imgs,xmls = delNotHeaveXmlIMG(imgs,xmls)
+    print(len(imgs),len(xmls))
     for i,v in enumerate(imgs):
         print(v)
         spth = indir + v

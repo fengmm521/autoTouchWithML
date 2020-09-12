@@ -11,7 +11,7 @@ def readcom(t):
         time.sleep(0.001)
         n = t.inWaiting()
     pstr = t.read(n)
-    print(pstr)
+    print(str(pstr) + ':' + str(time.time()))
 
 def sendcmd(t,cmd):
     sendstr = cmd
