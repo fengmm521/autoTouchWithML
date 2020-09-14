@@ -136,7 +136,7 @@ def createData():
 
 
 from yolov3 import *
-from yolov3-tiny import *
+from yolov3_tiny import *
 
 def createCfgYOLOv3(cnum):
     yolov3cfg = getYOLOV3CFG(cnum)
