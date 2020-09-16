@@ -65,6 +65,17 @@ def convert_annotation(in_file,out_file,classes,isHeaveClas):
     return ocls
 
 
+def findClassInXMLFileName(in_file,classes):
+    tree=ET.parse(in_file)
+    root = tree.getroot()
+    for obj in root.iter('object'):
+        difficult = obj.find('difficult').text
+        cls = obj.find('name').text
+        if cls in classes:
+            return True
+    return False
+
+
 def main(indir,outdir):
     wd = getcwd()
     # for year, image_set in sets:

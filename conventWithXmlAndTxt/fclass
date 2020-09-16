@@ -1,0 +1,13 @@
+#!/bin/bash
+export PATH=/usr/local/bin/:/usr/bin:/bin:$PATH
+CUR_PATH=`pwd`
+basepath=$(cd `dirname $0`; pwd)
+echo $CUR_PATH
+echo $basepath
+
+if [[ $2 ]]; then
+    echo "查找相应分类标注"
+    python findClassFile.py $1 $2
+else
+    python findClassFile.py
+fi

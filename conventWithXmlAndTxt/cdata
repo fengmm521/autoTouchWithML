@@ -5,6 +5,7 @@ basepath=$(cd `dirname $0`; pwd)
 echo $CUR_PATH
 echo $basepath
 
+
 if [[ $3 ]]; then
     cd $basepath
     python3 createData.py $1 ../outsource $2 $3
