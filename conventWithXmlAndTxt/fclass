@@ -7,7 +7,7 @@ echo $basepath
 
 if [[ $2 ]]; then
     echo "查找相应分类标注"
-    python findClassFile.py $1 $2
+    python findClassFile.py $1 $2 $3
 else
     python findClassFile.py
 fi

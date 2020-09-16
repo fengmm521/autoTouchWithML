@@ -6,11 +6,23 @@ echo $CUR_PATH
 echo $basepath
 
 if [[ $1 = cdata ]]; then
-    cd $basepath/conventWithXmlAndTxt
-    ./cdata ../datalablImg PNG
-    cd $basepath/darknet
-    ./dktrain cdata
     
+    if [[ $2 ]]; then
+        #statements
+        cd $basepath/conventWithXmlAndTxt
+        ./cdata ../datalablImg $2
+        cd $basepath/darknet
+        ./dktrain cdata
+    else
+        cd $basepath/conventWithXmlAndTxt
+        ./cdata ../datalablImg PNG
+        cd $basepath/darknet
+        ./dktrain cdata
+    fi
+elif [[ $1 = fclass ]]; then
+    #statements
+    cd $basepath/conventWithXmlAndTxt
+    ./fclass ../datalablImg $2 $3
 elif [[ $1 = train ]]; then
     #statements
     echo "training with datalablImg data"

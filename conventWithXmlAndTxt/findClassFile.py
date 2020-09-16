@@ -308,52 +308,60 @@ def saveClassesToFile(fpth,plist):
     f.write(outstr)
     f.close()
 
-def delNotHeaveXmlIMG(imgs,xmls):
-    tmpimgs = []
-    tmpxmls = []
-    names = []
-    for i,v in enumerate(xmls):
-        tmpname = v.split('.')[0]
-        names.append(tmpname)
-        tmpxmls.append(v)
-        # print(v)
-    for i,v in enumerate(imgs):
-        # print(v)
-        tmpimgname = v.split('.')[0]
-        if tmpimgname in names:
-            tmpimgs.append(v)
-    return tmpimgs,tmpxmls
+def getImgWithXmlPth(xmlpth,imgFmart):
+    tmpname = xmlpth[:-4] + imgFmart
+    return tmpname
+def copyfile(spth,tpth):
+    print(spth,tpth)
+    f = open(spth,'rb')
+    dat = f.read()
+    f.close()
+    f = open(tpth,'wb')
+    f.write(dat)
+    f.close()
+def copyImgAndXml(xmlpth,imgFmart,outdir):
+    print(xmlpth)
+    imgpth = getImgWithXmlPth(xmlpth, imgFmart)
+    print(imgpth)
+    fname = getFileNameFromPath(xmlpth)
+    oxml = outdir + os.sep + fname + '.xml'
+    oimg = outdir + os.sep + fname + imgFmart
+    copyfile(xmlpth, oxml)
+    copyfile(imgpth, oimg)
 
-
-def findClass(indir,labfmart,cname):
+def findClass(indir,imgfmart,labfmart,cname):
     classes = [cname]
     idir = indir
     odir = None
     if not idir:
         idir = os.getcwd()
     if not odir:
-        odir = idir + os.sep + 'outxml'
+        odir = GetParentPath(idir) + os.sep + 'findxml'
+    if not os.path.exists(odir):
+        os.mkdir(odir)
     xmls=createDataFile(indir,labfmart)
     print(len(xmls))
     findclassxmls = []
     for i,v in enumerate(xmls):
         spth = indir + v
         if findClassInXML(spth,classes):
-            findclassxmls.append(v)
+            findclassxmls.append(spth)
     if findclassxmls:
-        for v in enumerate(findclassxmls):
+        for i,v in enumerate(findclassxmls):
             print(v)
+            copyImgAndXml(v,imgfmart,odir)
         return True
     return False
 def main(args):
-    if len(args) != 3:
+    if len(args) != 4:
         print('please input:indirlink:')
-        print('python3 findClassFile.py indir')
+        print('python3 findClassFile.py indir imgFmart classname')
         return
     indir = args[1]
-    cname = args[2]
+    imgFmart = '.' + args[2]
+    cname = args[3]
     # main(indir,outdir,imgfmart,labfmart)
-    isOK = findClass(indir,'.xml',cname)
+    isOK = findClass(indir,imgFmart,'.xml',cname)
     print(isOK)
 
 # def test():

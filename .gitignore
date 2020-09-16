@@ -347,3 +347,8 @@ datalablImg/IMG_1610.xml
 datalablImg/IMG_1610.PNG
 datalablImg/IMG_1609.xml
 datalablImg/IMG_1609.PNG
+*.xml
+*.jpg
+*.PNG
+*.txt
+*.zip
