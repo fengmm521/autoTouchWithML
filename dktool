@@ -27,7 +27,16 @@ elif [[ $1 = train ]]; then
     #statements
     echo "training with datalablImg data"
     cd $basepath/darknet
-    ./dktrain train $2 $3
+    if [[ $3 ]]; then
+        #statements
+        ./dktrain train $2 $3
+    elif [[ $2 ]]; then
+        #statements
+        ./dktrain train /home/mage/darknet/darknet/darknet $2
+    else
+        ./dktrain train /home/mage/darknet/darknet/darknet /home/mage/darknet/yolov3/darknet53.conv.74
+    fi
+    
 elif [[ $1 = test ]]; then
     #statements
     echo "run test"

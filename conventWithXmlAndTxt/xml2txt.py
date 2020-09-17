@@ -31,6 +31,7 @@ def convert_annotation(in_file,out_file,classes,isHeaveClas):
     w = int(size.find('width').text)
     h = int(size.find('height').text)
     ocls = []
+    outstr = ''
     for obj in root.iter('object'):
         difficult = obj.find('difficult').text
         cls = obj.find('name').text
@@ -44,7 +45,8 @@ def convert_annotation(in_file,out_file,classes,isHeaveClas):
             xmlbox = obj.find('bndbox')
             b = (float(xmlbox.find('xmin').text), float(xmlbox.find('xmax').text), float(xmlbox.find('ymin').text), float(xmlbox.find('ymax').text))
             bb = convert((w,h), b)
-            out_file.write(str(cls_id) + " " + " ".join([str(a) for a in bb]) + '\n')
+            outstr += str(cls_id) + " " + " ".join([str(a) for a in bb]) + '\n'
+            # out_file.write(str(cls_id) + " " + " ".join([str(a) for a in bb]) + '\n')
             ocls.append(cls)
         else:
             cls_id = 0
@@ -58,10 +60,11 @@ def convert_annotation(in_file,out_file,classes,isHeaveClas):
             xmlbox = obj.find('bndbox')
             b = (float(xmlbox.find('xmin').text), float(xmlbox.find('xmax').text), float(xmlbox.find('ymin').text), float(xmlbox.find('ymax').text))
             bb = convert((w,h), b)
-            f = open(out_file,'a')
-            f.write(str(cls_id) + " " + " ".join([str(a) for a in bb]) + '\n')
-            f.close()
+            outstr += str(cls_id) + " " + " ".join([str(a) for a in bb]) + '\n'
             ocls.append(cls)
+    f = open(out_file,'a')
+    f.write(outstr)
+    f.close()
     return ocls
 
 
