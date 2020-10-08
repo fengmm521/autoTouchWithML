@@ -133,9 +133,12 @@ def removeProjectAllHideDir(pth):
     alldirs = getAllDirs(pth)
     if not ('/' in alldirs):
         alldirs.append('/')
+    outdirs = []
+    allfiles = []
     for d in alldirs:
         tmpth = pth + d
-        os.path.walk(tmpth, finddir, 0)
+
+
 
 
 #获取一个路径中所包含的所有目录及子目录
@@ -211,6 +214,7 @@ valNum = 0.2
 
 trainpth = 'train.txt'
 valpth = 'val.txt'
+
 
 def createDataFile(indir,imgfmart = '.png',typefmart = '.xml'):
     imgstmp = getAllFiles(indir,imgfmart)
@@ -309,24 +313,39 @@ def saveClassesToFile(fpth,plist):
     f.write(outstr)
     f.close()
 
+def isHideFile(fpth):
+    tmp = fpth.split('/')[-1]
+    if tmp[0] == '.':
+        return True
+    else:
+        return False
+
+
 def delNotHeaveXmlIMG(imgs,xmls):
     tmpimgs = []
     tmpxmls = []
     names = []
+    hidfiles = []
     for i,v in enumerate(xmls):
+        if isHideFile(v):
+            hidfiles.append(v)
+            continue
         tmpname = v.split('.')[0]
         names.append(tmpname)
         tmpxmls.append(v)
         # print(v)
     for i,v in enumerate(imgs):
         # print(v)
+        if isHideFile(v):
+            hidfiles.append(v)
+            continue
         tmpimgname = v.split('.')[0]
         if tmpimgname in names:
             tmpimgs.append(v)
-    return tmpimgs,tmpxmls
-
+    return tmpimgs,tmpxmls,hidfiles
 
 def createData(indir,outdir,imgfmart,labfmart):
+    removeProjectAllHideDir(indir)
     classes = []
     idir = indir
     odir = outdir
@@ -354,7 +373,11 @@ def createData(indir,outdir,imgfmart,labfmart):
         print('the classes is empty,and will create it to outdir:\n%s'%(oclspth))
     imgs,xmls=createDataFile(indir,imgfmart,labfmart)
     print(len(imgs),len(xmls))
-    imgs,xmls = delNotHeaveXmlIMG(imgs,xmls)
+    imgs,xmls,hidfiles = delNotHeaveXmlIMG(imgs,xmls)
+    for i,v in enumerate(hidfiles):
+        hidpth = indir + v
+        if os.path.exists(hidpth):
+            os.remove(hidpth)
     print(len(imgs),len(xmls))
     for i,v in enumerate(imgs):
         print(v)
